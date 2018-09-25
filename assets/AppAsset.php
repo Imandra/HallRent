@@ -27,7 +27,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         //'js/jquery-1.11.1.min.js',
-        //'js/jquery-ui.min.js',
+        'js/jquery-ui.min.js',
         'js/simpslider.js',
         'js/lightview.js',
         'js/script.js',
