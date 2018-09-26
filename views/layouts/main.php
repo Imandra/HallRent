@@ -8,6 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\Menu;
 use app\assets\AppAsset;
 use app\assets\LtAppAsset;
 
@@ -45,23 +46,31 @@ LtAppAsset::register($this);
                 <div class="center">
                     <a class="logo" href="#"></a>
                     <nav class="main-nav">
-                        <ul>
-                            <li><a href="#">главная</a></li>
-                            <li><a href="#">о гостинице</a></li>
-                            <li class="has-sub"><a href="#">номера</a>
-                                <ul class="sub">
-                                    <li><a href="#">студия стандарт</a></li>
-                                    <li><a href="#">студия комфорт</a></li>
-                                    <li><a href="#">бизнес стандарт</a></li>
-                                    <li><a href="#">бизнес комфорт</a></li>
-                                    <li><a href="#">люкс</a></li>
-                                    <li><a href="#">де люкс</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">спецпредложения</a></li>
-                            <li><a href="#">контакты</a></li>
-                            <li class="not-on-desctop block"><a href="#">бронирование</a></li>
-                        </ul>
+						<?php
+						echo Menu::widget([
+							'activateItems' => false,
+							'submenuTemplate' => '<ul class="sub">{items}</ul>',
+							'items' => [
+								['label' => 'главная', 'url' => ['site/index']],
+								['label' => 'о гостинице', 'url' => ['site/index']],
+								['label' => 'номера', 'url' => ['site/index'], 'options' => ['class' => 'has-sub'],
+									'items' => [
+										['label' => 'студия стандарт', 'url' => ['site/index']],
+										['label' => 'студия комфорт', 'url' => ['site/index']],
+										['label' => 'бизнес стандарт', 'url' => ['site/index']],
+										['label' => 'бизнес комфорт', 'url' => ['site/index']],
+										['label' => 'люкс', 'url' => ['site/index']],
+										['label' => 'де люкс', 'url' => ['site/index']],
+									]],
+								['label' => 'спецпредложения', 'url' => ['site/index'], 'options' => ['class' => 'has-sub'],
+									'items' => [
+										['label' => 'конференц-зал', 'url' => ['site/about']],
+                                    ]],
+								['label' => 'контакты', 'url' => ['site/index']],
+								['label' => 'бронирование', 'url' => ['site/index'], 'options' => ['class' => 'not-on-desctop block']],
+							],
+						]);
+						?>
                     </nav>
                     <div class="btn-nav-open"><span>Меню <i></i></span></div>
                     <div class="socials">
@@ -79,8 +88,11 @@ LtAppAsset::register($this);
         </div>
 
     </div><!-- .page-top -->
+    <section class="content-center">
 
-<?= $content; ?>
+        <?= $content; ?>
+
+    </section>
 
 </div><!-- .main-wrap -->
 
