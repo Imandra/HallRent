@@ -24,6 +24,7 @@ class AppAsset extends AssetBundle
         'css/jquery-ui.min.css',
         'css/style.css',
         'css/responsive.css',
+        'css/hall-rent.css',
     ];
     public $js = [
         //'js/jquery-1.11.1.min.js',

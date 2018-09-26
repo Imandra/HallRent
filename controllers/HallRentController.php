@@ -35,12 +35,10 @@ class HallRentController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => HallRent::find(),
-        ]);
+        $model = new HallRent();
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+            'model' => $model,
         ]);
     }
 
@@ -65,6 +63,7 @@ class HallRentController extends Controller
     public function actionCreate()
     {
         $model = new HallRent();
+        $model->application_date = date('Y-m-d H:i:s');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

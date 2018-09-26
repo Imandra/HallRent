@@ -64,7 +64,7 @@ LtAppAsset::register($this);
 									]],
 								['label' => 'спецпредложения', 'url' => ['site/index'], 'options' => ['class' => 'has-sub'],
 									'items' => [
-										['label' => 'конференц-зал', 'url' => ['site/about']],
+										['label' => 'конференц-зал', 'url' => ['hall-rent/index']],
                                     ]],
 								['label' => 'контакты', 'url' => ['site/index']],
 								['label' => 'бронирование', 'url' => ['site/index'], 'options' => ['class' => 'not-on-desctop block']],

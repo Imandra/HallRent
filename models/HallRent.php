@@ -44,10 +44,10 @@ class HallRent extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'customer_name' => 'Customer Name',
+            'customer_name' => 'Ваше имя',
             'email' => 'Email',
-            'phone_number' => 'Phone Number',
-            'preferences' => 'Preferences',
+            'phone_number' => 'Телефон',
+            'preferences' => 'Предпочтения',
             'application_date' => 'Application Date',
         ];
     }
