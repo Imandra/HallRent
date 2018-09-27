@@ -29,7 +29,7 @@ $this->title = 'Большой конференц-зал';
 <div class="slider-photos">
     <ul class="big">
         <li>
-            <div class="image"><img src="/img/conferences1.jpg"></div>
+            <div class="image"><img class="conferences" src="/img/conferences1.jpg"></div>
         </li>
     </ul>
 </div>
