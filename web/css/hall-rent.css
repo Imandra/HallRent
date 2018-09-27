@@ -34,17 +34,17 @@
     margin: 24px 0;
 }
 
-.content ul {
+.prices ul {
     list-style: none;
 }
 
-.content li {
+.prices li {
     position: relative;
     margin: 0 0 0.5em 0;
     padding: 0 0 0 16px;
 }
 
-.content ul > li::before {
+.prices ul > li::before {
     content: '';
     position: absolute;
     top: 0.75em;
@@ -58,7 +58,7 @@
     transform: rotate(45deg);
 }
 
-.content p, .content ol, .content ul {
+.prices p, .prices ol, .prices ul {
     margin: 0 0 1em 0;
     padding: 0;
 }

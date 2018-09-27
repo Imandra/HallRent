@@ -25,5 +25,5 @@ class LtAppAsset extends AssetBundle
     public $jsOptions = [
         'condition' => 'lte IE9',
         'position' => \yii\web\View::POS_HEAD
-    ];
+	];
 }

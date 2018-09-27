@@ -120,8 +120,8 @@ LtAppAsset::register($this);
             </div>
             <div class="col3">
                 <h3>Отзывы гостей:</h3>
-                <a class="review" href="#"><img src="img/footer-review1.png" width="143" height="97" alt=""></a>
-                <a class="review" href="#"><img src="img/footer-review2.png" width="99" height="99" alt=""></a>
+                <a class="review" href="#"><img src="/img/footer-review1.png" width="143" height="97" alt=""></a>
+                <a class="review" href="#"><img src="/img/footer-review2.png" width="99" height="99" alt=""></a>
             </div>
         </div>
     </div>

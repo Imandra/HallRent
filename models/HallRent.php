@@ -33,7 +33,9 @@ class HallRent extends \yii\db\ActiveRecord
             [['customer_name', 'email', 'phone_number', 'application_date'], 'required'],
             [['preferences'], 'string'],
             [['application_date'], 'safe'],
-            [['customer_name', 'email', 'phone_number'], 'string', 'max' => 255],
+            [['customer_name', 'email'], 'string', 'max' => 255],
+			['phone_number', 'string', 'length' => [5, 20]],
+			['email', 'email'],
         ];
     }
 
@@ -48,7 +50,7 @@ class HallRent extends \yii\db\ActiveRecord
             'email' => 'Email',
             'phone_number' => 'Телефон',
             'preferences' => 'Предпочтения',
-            'application_date' => 'Application Date',
+            'application_date' => 'Дата подачи заявки',
         ];
     }
 }

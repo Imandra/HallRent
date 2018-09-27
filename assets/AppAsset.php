@@ -27,7 +27,7 @@ class AppAsset extends AssetBundle
         'css/hall-rent.css',
     ];
     public $js = [
-        //'js/jquery-1.11.1.min.js',
+        'js/jquery-1.11.1.min.js',
         'js/jquery-ui.min.js',
         'js/simpslider.js',
         'js/lightview.js',
@@ -35,7 +35,10 @@ class AppAsset extends AssetBundle
 
     ];
     public $depends = [
-        'yii\web\YiiAsset',
+        //'yii\web\YiiAsset',
         //'yii\bootstrap\BootstrapPluginAsset',
     ];
+	public $jsOptions = [
+		'position' => \yii\web\View::POS_HEAD
+	];
 }

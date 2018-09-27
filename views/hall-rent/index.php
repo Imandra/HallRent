@@ -1,9 +1,8 @@
 <?php
 
-/*
- * @var $this yii\web\View
- * @var $model yii\models\HallRent
-*/
+/* @var $this yii\web\View */
+/* @var $model app\models\HallRent */
+
 
 use yii\helpers\Html;
 use yii\bootstrap\Modal;
@@ -11,6 +10,20 @@ use yii\widgets\ActiveForm;
 
 $this->title = 'Большой конференц-зал';
 ?>
+
+<?php if( Yii::$app->session->hasFlash('success') ): ?>
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<?php echo Yii::$app->session->getFlash('success'); ?>
+    </div>
+<?php endif;?>
+
+<?php if( Yii::$app->session->hasFlash('error') ): ?>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<?php echo Yii::$app->session->getFlash('error'); ?>
+    </div>
+<?php endif;?>
 
 <div class="inner-page-title"><h1><?= Html::encode($this->title) ?></h1></div>
 <div class="slider-photos">
@@ -21,7 +34,7 @@ $this->title = 'Большой конференц-зал';
     </ul>
 </div>
 
-<div class="content">
+<div class="prices">
     <ul>
         <li>Площадь &ndash; 86 кв.м.</li>
         <li>Вместимость &ndash; 50 чел.</li>

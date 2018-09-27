@@ -66,12 +66,29 @@ class HallRentController extends Controller
         $model->application_date = date('Y-m-d H:i:s');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+			Yii::$app->session->setFlash('success', 'Спасибо! Ваша заявка принята к рассмотрению.');
+			// TODO: можно реализовать через behavior
+			Yii::$app->mailer->compose()
+				->setTo($model->email)
+				->setFrom(['test@yandex.ru' => 'test'])
+				->setSubject('Уведомление о заявке')
+				->setTextBody('Спасибо! Ваша заявка принята к рассмотрению.')
+				->send();
+			Yii::$app->mailer->compose()
+				->setTo('admin@example.com')
+				->setFrom(['test@yandex.ru' => 'test'])
+				->setSubject('Уведомление о заявке')
+				->setTextBody($model->application_date . ' Поступила новая заявка на заказ конференц-зала. ' .
+					' ' . $model->customer_name . ' ' . $model->email . ' ' . $model->phone_number .
+					' ' . $model->preferences)
+				->send();
+            return $this->redirect(['index', 'model' => $model]);
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+		Yii::$app->session->setFlash('error', 'Произошла ошибка! Попробуйте еще раз.');
+		return $this->render('index', [
+			'model' => $model,
+		]);
     }
 
     /**
