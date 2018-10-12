@@ -62,7 +62,7 @@ LtAppAsset::register($this);
 										['label' => 'люкс', 'url' => ['site/index']],
 										['label' => 'де люкс', 'url' => ['site/index']],
 									]],
-								['label' => 'спецпредложения', 'url' => ['site/index'], 'options' => ['class' => 'has-sub'],
+								['label' => 'спецпредложения', 'url' => ['#'], 'options' => ['class' => 'has-sub'],
 									'items' => [
 										['label' => 'конференц-зал', 'url' => ['hall-rent/index']],
                                     ]],
